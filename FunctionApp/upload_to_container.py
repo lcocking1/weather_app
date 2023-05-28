@@ -47,7 +47,8 @@ class UploadToContainer:
                         ).timestamp()
                     )
                 )
-                fh_item_id = '_'.join([gridpoint["id"], timestamp_string])
+                # fh_item_id = '_'.join([gridpoint["id"], timestamp_string])
+                fh_item_id = gridpoint["id"]
                 # remove unneeded keys/values from fh_item
                 temp_d = {}
                 temp_d["id"] = fh_item_id
