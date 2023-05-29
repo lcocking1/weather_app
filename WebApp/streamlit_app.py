@@ -76,6 +76,7 @@ if clicked_location is not None:
     sql_select = "select c.properties.periods from c"
     sql_where = f"where c.gridId = '{df_grid_id['gridId']}' and c.gridX = '{df_grid_id['gridX']}' and c.gridY = '{df_grid_id['gridY']}'"
     sql = f"{sql_select} {sql_where}"
+
     forecast_item = [i["periods"] for i in forecast_client.query_items(sql, enable_cross_partition_query=True)]
     df = pd.DataFrame(forecast_item[0])
     for item in forecast_item[1:]:
